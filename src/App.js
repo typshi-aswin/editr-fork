@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     if (text) {
-      setCharacters(text.length);
+      setCharacters(text.replace(/\s/g, "").length);
       setWords(text.trim().split(/\s+/).filter(Boolean).length);
 
       for (let index = 0; index < text.length; index++) {
