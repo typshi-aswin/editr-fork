@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     if (text) {
       setCharacters(text.length);
-      setWords(text.split(" ").length);
+      setWords(text.trim().split(/\s+/).filter(Boolean).length);
 
       for (let index = 0; index < text.length; index++) {
         if (format.test(text.charAt(index))) {
